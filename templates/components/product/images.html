@@ -1,0 +1,26 @@
+<div class="product-main-image">
+  <a
+    class="product-image"
+    href="{{getImage product_image 'zoom'}}"
+    data-product-image
+  >
+    <img
+      alt="{{product_image.alt}}"
+      src="{{getImage product_image 'gallery' default_image}}"
+    >
+  </a>
+</div>
+
+{{#if product_thumbs.length ">" 1}}
+  <div class="product-thumbnails">
+    {{#each product_thumbs}}
+      <span
+        class="product-thumbnail {{#if @first}}active{{/if}}"
+        data-image-thumb
+        data-high-res="{{getImage this 'medium'}}"
+      >
+        <img src="{{getImage this 'core-picklist-thumb'}}">
+      </span>
+    {{/each}}
+  </div>
+{{/if}}

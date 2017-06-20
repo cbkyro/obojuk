@@ -1,0 +1,36 @@
+---
+carousel: true
+cart: true
+products:
+  featured:
+    limit: {{theme_settings.homepage_featured_products_limit}}
+  new:
+    limit: {{theme_settings.homepage_new_products_limit}}
+blog:
+  recent_posts:
+    limit: {{theme_settings.homepage_blog_article_limit}}
+    summary: 400
+---
+
+{{#partial "page"}}
+
+  {{> components/common/shipping-messages}}
+
+  {{#if carousel.slides.length}}
+    {{#if theme_settings.carousel_style '===' 'mosaic'}}
+      {{> components/mosaic}}
+    {{else}}
+      {{> components/slideshow}}
+    {{/if}}
+  {{/if}}
+  {{{snippet 'home_content'}}}
+
+  {{> components/product/products-new products=products.new}}
+  {{> components/product/products-featured products=products.featured}}
+  {{#if theme_settings.homepage_show_blog}}
+    {{> components/blog/latest-posts}}
+  {{/if}}
+
+{{/partial}}
+
+{{> layout/base}}
