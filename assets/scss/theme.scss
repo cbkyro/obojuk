@@ -6888,6 +6888,7 @@ body {
   margin-top: 7px;
   margin-bottom: 7px;
   color: $lighter-text;
+  margin-right: 10px;
 }
 
 // Product Options
@@ -7034,6 +7035,16 @@ body {
       margin-right: 0;
     }
   }
+}
+.product-rating { margin-top: 13px; }
+.product-item-price, .rating-stars-readonly, .rating-total-votes {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rating-total-votes {
+    margin-left: 5px;
 }
 
 .ratings-count-text {
