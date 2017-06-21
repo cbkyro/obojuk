@@ -10411,7 +10411,15 @@ $auth-font-size: $account-font-size !default;
     }
   }
 }
-.banner-bottom .banners { background-color: transparent; }
+.banner-bottom .banners { 
+  background-color: transparent;
+  
+  p { 
+    color: #000000;
+    text-transform: none;
+  }
+  span { margin: 0; }
+}
 
 .banner {
   overflow: auto;
