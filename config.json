@@ -1,5 +1,5 @@
 {
-  "name": "Capacity (OneByOne) (bottom banner text treatment)",
+  "name": "Capacity (OneByOne) (Review modal)",
   "version": "1.14.1",
   "css_compiler": "scss",
   "autoprefixer_cascade": true,
@@ -132,7 +132,7 @@
       },
       "thumbnail": {
         "width": 80,
-        "height": 40
+        "height": 80
       },
       "small": {
         "width": 300,
@@ -425,7 +425,7 @@
           },
           "thumbnail": {
             "width": 80,
-            "height": 40
+            "height": 80
           },
           "small": {
             "width": 300,
