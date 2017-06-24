@@ -1,0 +1,71 @@
+{{!-- Product Reviews: include in reviews.html page template --}}
+
+<script id="schema-product">
+
+  var schema = document.createElement('script');
+  schema.type = 'application/ld+json';
+  schema.text = JSON.stringify({
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "{{product.title}}",
+    "image": "{{getImage product.main_image}}",
+    "description": "{{json product.description}}",
+    "sku": "{{product.sku}}",
+    "brand": {
+      "@type": "Thing",
+      "name": "{{product.brand.name}}"
+    },
+    {{#if product.reviews.list}}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{product.rating}}",
+        "reviewCount": "{{product.num_reviews}}"
+      },
+    {{/if}}
+  });
+
+  document.querySelector('body').appendChild(schema);
+
+  var script = document.getElementById('schema-product');
+  script.parentElement.removeChild(script);
+</script>
+
+---
+cart: true
+product:
+  reviews:
+      limit: 999
+  related_products:
+      limit: 4
+  videos: true
+---
+
+  {{#each product.reviews.list}}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "image": "{{getImage ../product.main_image}}",
+          "name": "{{../product.title}}"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "{{rating}}"
+        },
+        "name": "{{title}}",
+        "author": {
+          "@type": "Person",
+          "name": "{{name}}"
+        },
+        "reviewBody": "{{text}}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "{{../settings.store_name}}"
+        }
+      }
+    </script>
+  {{/each}}
+  
+  {{product.reviews.list}}
