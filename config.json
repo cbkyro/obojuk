@@ -1,5 +1,6 @@
 {
-  "name": "Capacity (OneByOne) (Review page)",
+  "name": "Capacity (OneByOne) (Banner text & logic)
+)",
   "version": "1.14.1",
   "css_compiler": "scss",
   "autoprefixer_cascade": true,
