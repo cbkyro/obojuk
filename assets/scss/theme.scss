@@ -10415,8 +10415,13 @@ $auth-font-size: $account-font-size !default;
   background-color: transparent;
   
   p { 
-    color: #000000;
+    color: #666666;
     text-transform: none;
+    font-family: $secondary-font;
+    font-size: 13px;
+    line-height: 1.666;
+    letter-spacing: 0;
+    
   }
   span { margin: 0; }
 }

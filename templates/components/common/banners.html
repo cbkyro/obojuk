@@ -1,9 +1,15 @@
-{{#if this}}
+{{#if this.length '>' 0}}
   <div class="banners">
     {{#each this}}
       <div class="banner rte">
         {{{this}}}
       </div>
     {{/each}}
+  </div>
+  {{else}}
+  <div class="banners">
+  	<div class="banner rte">
+  		<p><span> FREE SHIPPING </span>&bull;<span> FREE GIFT WRAP </span>&bull;<span> HASSLE FREE RETURNS</span></p>
+  	</div>
   </div>
 {{/if}}
