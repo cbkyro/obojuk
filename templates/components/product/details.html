@@ -235,7 +235,7 @@
       
       <nav class="product-tabs-menu">
         <ul class="product-tabs-list" data-tabs>
-          <li class="product-tab-title"><a class="product-tab-link" href="#description">{{lang 'product.tabs.description'}}</a></li>
+          <!-- <li class="product-tab-title"><a class="product-tab-link" href="#description">{{lang 'product.tabs.description'}}</a></li> -->
           {{#if product.custom_fields.length}}
             {{#if product.detail_messages.length}}
               <li class="product-tab-title"><a class="product-tab-link" href="#details">{{lang 'product.tabs.details'}}</a></li>
@@ -251,7 +251,7 @@
       </nav>
 
       <div class="product-tabs tabs-content">
-        <div class="tab-content-panel rte" id="description">
+        <div class="tab-content-panel rte" id="description!"> <!-- Remove "1" to reappear -->
           {{#if product.description}}
             <div class="tab-product-description">
               {{{product.description}}}
@@ -275,6 +275,12 @@
         {{#if product.warranty}}
           <div class="tab-content-panel rte" id="warranty">
             <div class="tab-product-warranty">
+              {{#if product.sku}}
+	            <div class="product-detail product-detail-sku">
+	              <span class="product-detail-key">{{ lang 'product.detail.sku' }}</span>
+	              <span data-product-sku>{{product.sku}}</span>
+	            </div>
+	          {{/if}}
               {{{product.warranty}}}
             </div>
           </div>
