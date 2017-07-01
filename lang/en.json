@@ -276,13 +276,13 @@
       "view_less": "View Less",
       "num_reviews": "({numReviews})",
       "form": {
-        "name": "Name",
+        "name": "First Name and Initial",
         "your_name": "Your Name",
-        "subject": "Subject",
+        "subject": "Review Title",
         "your_subject": "Your Review Subject",
         "email": "Email Address",
         "your_email": "Your Email Address",
-        "comments": "Comments",
+        "comments": "What did you like about this item and our services?",
         "your_comments": "Your Comments",
         "submit": "Submit Review"
       }

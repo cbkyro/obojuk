@@ -85,13 +85,13 @@
         {{> core/forms/common/text label=(lang 'product.reviews.form.name') name="revfromname" id="revfromname" prefill=(lang 'product.reviews.form.name')}}
 
         {{!-- Email --}}
-        {{> core/forms/common/email label=(lang 'product.reviews.form.email') name="email" id="rating-email" required="true" prefill=(lang 'product.reviews.form.email')}}
+        {{!> core/forms/common/email label=(lang 'product.reviews.form.email') name="email" required="true" id="rating-email" prefill=(lang 'product.reviews.form.email')}}
 
         {{!-- Subject --}}
-        {{> core/forms/common/text label=(lang 'product.reviews.form.subject') name="revtitle" id="rating-title" required="true" prefill=(lang 'product.reviews.form.subject')}}
+        {{> core/forms/common/text label=(lang 'product.reviews.form.subject') name="revtitle" id="rating-title" prefill=(lang 'product.reviews.form.subject')}}
 
         {{!-- Comments --}}
-        {{> core/forms/common/multiline label=(lang 'product.reviews.form.comments') name="revtext" id="rating-comment" required="true" rows=6 prefill=(lang 'product.reviews.form.comments')}}
+        {{> core/forms/common/multiline label=(lang 'product.reviews.form.comments') name="revtext" id="rating-comment" rows=6 prefill=(lang 'product.reviews.form.comments')}}
 
         {{{product.reviews.recaptcha.markup}}}
 
