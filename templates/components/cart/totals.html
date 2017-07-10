@@ -4,6 +4,13 @@
     {{#each cart.status_messages}}
       {{#if type "!=" 2}}
         {{> core/alerts/alert-success message=message dismissable=true}}
+        <!-- Facebook pixel added to cart -->
+        <script>
+		  fbq('track', 'AddToCart', {
+		  value: 3.50,
+		  currency: 'USD'
+		  });
+	    </script>
       {{/if}}
     {{/each}}
   {{/if}}
