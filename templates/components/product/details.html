@@ -210,7 +210,17 @@
                  type="submit"
                  value="{{lang 'product.add_to_cart'}}"
                  {{#if product.can_purchase '===' false}}disabled{{/if}}
-                 data-button-purchase>
+                 data-button-purchase onclick="myFunction()">
+                 <p id="demo"></p>
+         <!-- Facebook Pixel Code -->
+		 <script>
+			function myFunction() {
+				fbq('track', 'AddToCart', {
+				value: 3.50,
+				currency: 'USD'
+				});
+			}
+		 </script>
         {{/if}}
         {{{snippet 'product_addtocart'}}}
         <span class="spinner"></span>
